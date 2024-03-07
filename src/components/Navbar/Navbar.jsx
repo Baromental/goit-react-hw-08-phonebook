@@ -7,7 +7,7 @@ import { selectIsLoggedIn, selectUser } from '../../redux/auth/authSlice'
 import { logoutThunk } from '../../redux/auth/authOperations'
 
 export const Navbar = () => {
-	const { email, name } = useSelector(selectUser)
+	const { name } = useSelector(selectUser)
 	const isLoggedIn = useSelector(selectIsLoggedIn)
 	const dispatch = useDispatch()
 	return (
@@ -15,7 +15,7 @@ export const Navbar = () => {
 			<Link className={s.homeLink} to='/'>
 				Phonebook
 			</Link>
-			<div>{email}</div>
+			<div>{name}</div>
 			<nav>
 				<NavLink to='/'>Home</NavLink>
 				<NavLink to='/contacts'>Contacts</NavLink>

@@ -4,7 +4,7 @@ import { Form } from '../../components/Form/Form'
 import { useDispatch } from 'react-redux'
 import { registerThunk } from '../../redux/auth/authOperations'
 import { useNavigate } from 'react-router-dom';
-import * as yup from 'yup'
+// import * as yup from 'yup'
 import { registerSchema } from '../../schemas/registerSchemas'
 import { toast } from 'react-toastify';
 
