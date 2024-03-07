@@ -2,19 +2,17 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from '../../../redux/contact/contactsOperations';
-import { selectContacts } from '../../../redux/contact/contactsSlice';
+import { selectContact } from '../../../redux/contact/contactsSelectors';
 import s from './ContactForm.module.css';
 
 export const ContactForm = () => {
+  const dispatch = useDispatch();
+  const contacts = useSelector(selectContact);
+  const isLoading = useSelector((state) => state.contacts.isLoading);
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
 
-  const contacts = useSelector(selectContacts);
-  const isLoading = useSelector((state) => state.contacts.isLoading);
-
-  const dispatch = useDispatch();
-
-  const handleChange = (e) => {
+  const handleChange = e => {
     const { name, value } = e.target;
     if (name === 'name') {
       setName(value);
@@ -23,24 +21,19 @@ export const ContactForm = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
-    handleAddContact(name, phone);
-    setName('');
-    setPhone('');
-  };
 
-  const handleAddContact = (name, phone) => {
-    const newContact = {
-      name: name.trim(),
-      phone: phone.trim(),
-    };
-    const isContactExist = contacts.some((contact) => contact.name === name);
-    if (isContactExist) {
-      alert(`${name} is already in contacts`);
+    if (contacts.find(contact => contact.name === name)) {
+      alert(`${name} has been already added`);
+      setName('');
+      setPhone('');
       return;
     }
-    dispatch(addContact(newContact));
+
+    dispatch(addContact({ name, number: phone }));
+    setName('');
+    setPhone('');
   };
 
   return (

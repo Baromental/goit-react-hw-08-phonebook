@@ -1,8 +1,6 @@
-// PassInputField.jsx
 import React, { useState } from 'react'
-import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import s from './Form.module.css'
-
+import { FaEye, FaEyeSlash } from 'react-icons/fa'
 export const PassInputField = ({ register, errors, label, name, placeholder }) => {
 	const [type, setType] = useState('password')
 

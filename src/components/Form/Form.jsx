@@ -1,10 +1,9 @@
-// Form.jsx
 import { useForm } from 'react-hook-form'
+import s from './Form.module.css'
 import { Link } from 'react-router-dom'
 import { InputField } from './InputField'
 import { PassInputField } from './PassInputField'
 import { yupResolver } from '@hookform/resolvers/yup'
-import s from './Form.module.css'
 
 export const Form = ({ onDataSubmit, formType, values, schema }) => {
 	const {

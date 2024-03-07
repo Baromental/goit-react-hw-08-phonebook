@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom'
 import s from './Navbar.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectIsLoggedIn, selectUser } from '../../redux/auth/authSlice'
-import { logoutThunk } from '../../redux/auth/operations'
+import { logoutThunk } from '../../redux/auth/authOperations'
 
 export const Navbar = () => {
 	const { email, name } = useSelector(selectUser)

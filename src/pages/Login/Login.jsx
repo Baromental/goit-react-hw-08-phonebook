@@ -2,7 +2,7 @@
 import React from 'react'
 import { Form } from '../../components/Form/Form'
 import { useDispatch } from 'react-redux'
-import { loginThunk } from '../../redux/auth/operations'
+import { loginThunk } from '../../redux/auth/authOperations'
 import { toast } from 'react-toastify'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { loginSchema } from '../../schemas/loginSchema'
@@ -22,14 +22,10 @@ export const Login = () => {
 				toast.error('Credentials is not valid!')
 			})
 	}
-	const values = {
-		email: 'StepanUA@mail.com.ua',
-		password: 'StepanUA@mail.com.ua',
-	}
-
+	
 	return (
 		<div>
-			<Form formType='login' schema={loginSchema} onDataSubmit={handleSubmit} values={{ values }} />
+			<Form formType='login' schema={loginSchema} onDataSubmit={handleSubmit} />
 		</div>
 	)
 }

@@ -4,13 +4,13 @@ import { useDispatch } from 'react-redux';
 import { ContactForm } from './ContactForm/ContactForm';
 import {ContactList} from './ContactList/ContactList';
 import {Filter} from './Filter/Filter';
-import { fetchContacts } from '../../redux/contact/contactsOperations';
+import { fetchContact } from '../../redux/contact/contactsOperations';
 
 export const ContactPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(fetchContact());
   }, [dispatch]);
 
   return (
