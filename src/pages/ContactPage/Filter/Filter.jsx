@@ -1,10 +1,10 @@
 // Filter.jsx
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { filterContacts, selectFilter } from '../redux/filterSlice';
+import { filterContacts, selectFilter } from '../../../redux/filterSlice';
 import s from './Filter.module.css';
 
-const Filter = () => {
+export const Filter = () => {
   const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
 
@@ -20,4 +20,3 @@ const Filter = () => {
   );
 };
 
-export default Filter;

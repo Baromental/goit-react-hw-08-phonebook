@@ -1,12 +1,12 @@
 // ContactList.jsx
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteContact } from '../articles/operations';
-import { selectContacts  } from '../redux/contactsSlice';
-import { selectFilter } from '../redux/filterSlice';
+import { deleteContact } from '../../../redux/contact/contactsOperations';
+import { selectContacts  } from '../../../redux/contact/contactsSlice';
+import { selectFilter } from '../../../redux/filterSlice';
 import s from './ContactList.module.css';
 
- const ContactList = () => {
+export const ContactList = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
   const filter = useSelector(selectFilter);
@@ -37,4 +37,3 @@ import s from './ContactList.module.css';
   );
 };
 
-export default ContactList;

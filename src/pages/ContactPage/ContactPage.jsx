@@ -1,11 +1,12 @@
+// ContactPage.jsx
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import ContactForm from './ContactForm/ContactForm';
-import Filter from './Filter/Filter';
-import ContactList from './ContactList/ContactList';
-import { fetchContacts } from '../components/articles/operations';
+import { ContactForm } from './ContactForm/ContactForm';
+import {ContactList} from './ContactList/ContactList';
+import {Filter} from './Filter/Filter';
+import { fetchContacts } from '../../redux/contact/contactsOperations';
 
-const App = () => {
+export const ContactPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -23,4 +24,3 @@ const App = () => {
   );
 };
 
-export default App;

@@ -1,10 +1,11 @@
+// ContactForm.jsx
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from '../articles/operations';
-import { selectContacts } from '../redux/contactsSlice';
+import { addContact } from '../../../redux/contact/contactsOperations';
+import { selectContacts } from '../../../redux/contact/contactsSlice';
 import s from './ContactForm.module.css';
 
-const ContactForm = () => {
+export const ContactForm = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
 
@@ -61,4 +62,3 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm;
