@@ -1,7 +1,7 @@
 // Filter.jsx
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { filterContacts, selectFilter } from '../../../redux/filterSlice';
+import { filterContacts, selectFilter } from '../../../redux/contact/filterSlice';
 import s from './Filter.module.css';
 
 export const Filter = () => {
