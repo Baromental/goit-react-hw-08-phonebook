@@ -1,3 +1,4 @@
+// Form.jsx
 import { useForm } from 'react-hook-form'
 import s from './Form.module.css'
 import { Link } from 'react-router-dom'
@@ -22,7 +23,7 @@ export const Form = ({ onDataSubmit, formType, values, schema }) => {
 	}
 
 	return (
-		<div className={s.wrapperForm}>
+		<div className={s.containerForm}>
 			<form className={s.form} onSubmit={handleSubmit(submit)}>
 				{formType !== 'login' && (
 					<InputField register={register} errors={errors} label='Name:' placeholder='Enter name' name='name' />
@@ -36,18 +37,18 @@ export const Form = ({ onDataSubmit, formType, values, schema }) => {
 					placeholder='Enter password'
 					name='password'
 				/>
-				<PassInputField
+				{formType !== 'login' && (<PassInputField
 					register={register}
 					errors={errors}
 					label='Confirm pass:'
 					placeholder='Enter password'
 					name='confirmPassword'
-				/>
+				/>)}
 
 				<button>{formType === 'login' ? 'Login' : 'Register'}</button>
-				<p className={s.link}>
+				<p className={s.paragraph}>
 					{formType !== 'login' ? 'You already have account?' : 'You do not have account?'}
-					{formType === 'login' ? <Link to='/register'>Sign in!</Link> : <Link to='/login'>Sign up!</Link>}
+					{formType === 'login' ? <Link className={s.link} to='/register'>Sign in!</Link> : <Link className={s.link} to='/login'>Sign up!</Link>}
 				</p>
 			</form>
 		</div>

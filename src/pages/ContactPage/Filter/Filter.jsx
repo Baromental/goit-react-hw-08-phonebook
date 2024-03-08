@@ -10,7 +10,7 @@ export const Filter = () => {
   const filter = useSelector(selectFilter);
 
   return (
-    <form>
+    <form className={s.form}>
       Find contacts by name
       <input type="text" name="filter" value={filter} onChange={e => dispatch(changeFilter(e.target.value))} className={s.input} />
     </form>

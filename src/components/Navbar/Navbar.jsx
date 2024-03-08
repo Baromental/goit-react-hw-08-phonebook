@@ -11,11 +11,11 @@ export const Navbar = () => {
 	const isLoggedIn = useSelector(selectIsLoggedIn)
 	const dispatch = useDispatch()
 	return (
-		<div className={s.wrapper}>
+		<div className={s.containerNav}>
 			<Link className={s.homeLink} to='/'>
 				Phonebook
 			</Link>
-			<div>{name}</div>
+			<div className={s.name}>{name}</div>
 			<nav>
 				<NavLink to='/'>Home</NavLink>
 				<NavLink to='/contacts'>Contacts</NavLink>

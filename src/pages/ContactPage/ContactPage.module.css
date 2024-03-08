@@ -1,0 +1,10 @@
+.containerContacts {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.title {
+  color: brown;
+  font-size: 30px;
+}

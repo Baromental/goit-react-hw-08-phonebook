@@ -1,16 +1,24 @@
 .button {
   min-width: 50px;
-  background-color: white;
+  color: #d2691e;
+  background-color: #e6bb13;
   border: 1px solid #808080;
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: transparent;
+  font-size: 16px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
   margin: 10px 5px;
 }
 
 .button:hover {
-  background-color: blue;
-  color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #ffebcd;
+  background-color: #d2691e;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 4);
+}
+
+.item {
+  color: brown;
+  font-size: 20px;
 }

@@ -10,14 +10,14 @@ export const ContactForm = () => {
   const contacts = useSelector(selectContact);
   const isLoading = useSelector((state) => state.contacts.isLoading);
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setNumber] = useState('');
 
   const handleChange = e => {
     const { name, value } = e.target;
     if (name === 'name') {
       setName(value);
-    } else if (name === 'phone') {
-      setPhone(value);
+    } else if (name === 'number') {
+      setNumber(value);
     }
   };
 
@@ -27,13 +27,13 @@ export const ContactForm = () => {
     if (contacts.find(contact => contact.name === name)) {
       alert(`${name} has been already added`);
       setName('');
-      setPhone('');
+      setNumber('');
       return;
     }
 
-    dispatch(addContact({ name, number: phone }));
+    dispatch(addContact({ name, number: number }));
     setName('');
-    setPhone('');
+    setNumber('');
   };
 
   return (
@@ -44,8 +44,8 @@ export const ContactForm = () => {
       </label>
 
       <label className={s.input}>
-        Phone
-        <input type="tel" name="phone" value={phone} onChange={handleChange} required />
+        Phone number
+        <input type="tel" name="number" value={number} onChange={handleChange} required />
       </label>
 
       <button className={s.button} type="submit" disabled={isLoading}>

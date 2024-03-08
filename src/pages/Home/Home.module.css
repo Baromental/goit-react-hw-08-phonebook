@@ -1,0 +1,18 @@
+.title {
+  font-size: 40px;
+  color: #a52a2a;
+}
+
+.paragraph {
+  font-size: 30px;
+  color: #a52a2a;
+}
+.link {
+  font-size: 30px;
+  color: #ff7f50;
+}
+
+.link:hover,
+.link:focus {
+  color: #a52a2a;
+}

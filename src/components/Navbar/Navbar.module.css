@@ -1,28 +1,55 @@
-.wrapper {
+.containerNav {
   display: flex;
   justify-content: space-between;
   gap: 20px;
   padding: 15px 20px;
-  color: white;
-  background-color: teal;
-  font-size: 1.2rem;
+  background-color: #d2691e;
   font-weight: bold;
-  font-style: italic;
   align-items: center;
-
-  nav {
-    display: flex;
-    gap: 15px;
-
-    a {
-      color: white;
-      font-size: 1.8rem;
-      text-decoration: none;
-    }
-  }
 }
-.homeLink {
-  color: white;
-  font-size: 1.8rem;
+
+nav {
+  display: flex;
+  gap: 15px;
+}
+
+a {
+  padding: 15px 20px;
+  color: #fff8dc;
+  font-size: 30px;
   text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: #ffebcd;
+}
+
+.homeLink {
+  color: #fff8dc;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.name {
+  color: #e6bb13;
+  font-style: italic;
+  font-size: 28px;
+}
+
+button {
+  min-width: 75px;
+  border-radius: 8px;
+  border: transparent;
+  color: #d2691e;
+  background-color: #e6bb13;
+  cursor: pointer;
+  font-size: 30px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+button:hover,
+button:focus {
+  background-color: #ffebcd;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 4);
 }
